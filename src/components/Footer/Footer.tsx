@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer>
-      <p id="footer">CTI Hash Generator</p>
+      <p id="footer">CTI Multi Tool</p>
     </footer>
   );
 };

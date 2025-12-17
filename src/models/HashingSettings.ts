@@ -1,4 +1,4 @@
-export interface Settings {
+export interface HashingSettings {
   input: string;
   output: string;
   inputEncoding: "utf8" | "hex" | "base64" | "";

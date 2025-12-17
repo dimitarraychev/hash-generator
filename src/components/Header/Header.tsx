@@ -9,7 +9,7 @@ const Header = () => {
     <header className="header">
       <div className="logo-wrapper" onClick={() => navigate("/")}>
         <img src={logo} alt="Logo" className="logo" />
-        <p className="logo-text">Hash Generator</p>
+        <p className="logo-text">Multi Tool</p>
       </div>
     </header>
   );

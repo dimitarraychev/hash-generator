@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { Settings } from "../models/Settings";
+import type { HashingSettings } from "../models/HashingSettings";
 import { encodeHash } from "../utils/encodeHash";
 import { decodeInput } from "../utils/decodeInput";
 import { validateInput } from "../utils/validateInput";
@@ -9,8 +9,12 @@ export type HashFunction = (
   key?: Uint8Array
 ) => Promise<Uint8Array>;
 
-export const useHash = (hashFn: HashFunction, initialSettings: Settings) => {
-  const [settingsData, setSettingsData] = useState<Settings>(initialSettings);
+export const useHash = (
+  hashFn: HashFunction,
+  initialSettings: HashingSettings
+) => {
+  const [settingsData, setSettingsData] =
+    useState<HashingSettings>(initialSettings);
 
   const handleChange = (
     e: React.ChangeEvent<

@@ -6,6 +6,8 @@ import Header from "./components/Header/Header";
 import SideMenu from "./components/SideMenu/SideMenu";
 import SHA256Section from "./components/SHA256Section/SHA256Section";
 import SHA1Section from "./components/SHA1Section/SHA1Section";
+import DecodeSection from "./components/DecodeSection/DecodeSection";
+import EncodeSection from "./components/EncodeSection/EncodeSection";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/sha1" element={<SHA1Section />} />
           <Route path="/sha256" element={<SHA256Section />} />
+          <Route path="/decode" element={<DecodeSection />} />
+          <Route path="/encode" element={<EncodeSection />} />
           <Route path="/" element={<p>Please select</p>} />
 
           <Route path="*" element={<Navigate to="/" />} />

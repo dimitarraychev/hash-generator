@@ -1,11 +1,11 @@
 import SettingsWrapper from "../SettingsWrapper/SettingsWrapper";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
 import { generateSHA1 } from "../../utils/generateSHA1";
-import { useHash } from "../../hooks/UseHash";
-import type { Settings } from "../../models/Settings";
+import { useHash } from "../../hooks/useHash";
+import type { HashingSettings } from "../../models/HashingSettings";
 
 const SHA1Section = () => {
-  const initialSettings: Settings = {
+  const initialSettings: HashingSettings = {
     input: "",
     output: "",
     inputEncoding: "utf8",
@@ -27,7 +27,8 @@ const SHA1Section = () => {
         />
 
         <ContentWrapper
-          settingsData={settingsData}
+          input={settingsData.input}
+          output={settingsData.output}
           handleChange={handleChange}
         />
       </div>

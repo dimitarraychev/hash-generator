@@ -1,8 +1,8 @@
 import "./SettingsWrapper.css";
-import type { Settings } from "../../models/Settings";
+import type { HashingSettings } from "../../models/HashingSettings";
 
 interface SettingsWrapperProps {
-  settingsData: Settings;
+  settingsData: HashingSettings;
   handleChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement

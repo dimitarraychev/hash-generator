@@ -1,9 +1,9 @@
 import "./ContentWrapper.css";
-import type { Settings } from "../../models/Settings";
 import { toast } from "react-toastify";
 
 interface ContentWrapperProps {
-  settingsData: Settings;
+  input: string;
+  output: string;
   handleChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -12,11 +12,12 @@ interface ContentWrapperProps {
 }
 
 const ContentWrapper = ({
-  settingsData,
+  input,
+  output,
   handleChange,
 }: ContentWrapperProps) => {
   const handleCopy = () => {
-    navigator.clipboard.writeText(settingsData.output);
+    navigator.clipboard.writeText(output);
     toast.success("URL copied to clipboard ✅");
   };
 
@@ -26,7 +27,7 @@ const ContentWrapper = ({
       <textarea
         name="input"
         id="input"
-        value={settingsData.input}
+        value={input}
         onChange={handleChange}
       />
 
@@ -35,7 +36,7 @@ const ContentWrapper = ({
         readOnly
         name="output"
         id="output"
-        value={settingsData.output}
+        value={output}
         onChange={handleChange}
         onClick={handleCopy}
       />
