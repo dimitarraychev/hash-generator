@@ -2,7 +2,7 @@ import type { Settings } from "../../models/Settings";
 import "./SettingsWrapper.css";
 
 interface SettingsWrapperProps {
-  formData: Settings;
+  settingsData: Settings;
   handleChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
@@ -10,14 +10,14 @@ interface SettingsWrapperProps {
   ) => void;
 }
 
-const SettingsWrapper = ({ formData, handleChange }: SettingsWrapperProps) => {
+const SettingsWrapper = ({ settingsData, handleChange }: SettingsWrapperProps) => {
   return (
     <div className="settings">
       <label htmlFor="inputEncoding">Input Encoding:</label>
       <select
         name="inputEncoding"
         id="inputEncoding"
-        value={formData.inputEncoding}
+        value={settingsData.inputEncoding}
         onChange={handleChange}
       >
         <option value="utf8">UTF-8</option>
@@ -29,7 +29,7 @@ const SettingsWrapper = ({ formData, handleChange }: SettingsWrapperProps) => {
       <select
         name="outputEncoding"
         id="outputEncoding"
-        value={formData.outputEncoding}
+        value={settingsData.outputEncoding}
         onChange={handleChange}
       >
         <option value="hex">Hex</option>
@@ -44,7 +44,7 @@ const SettingsWrapper = ({ formData, handleChange }: SettingsWrapperProps) => {
           <select
             name="keyEncoding"
             id="keyEncoding"
-            value={formData.keyEncoding}
+            value={settingsData.keyEncoding}
             onChange={handleChange}
           >
             <option value="utf8">UTF-8</option>
@@ -57,7 +57,7 @@ const SettingsWrapper = ({ formData, handleChange }: SettingsWrapperProps) => {
             type="text"
             name="key"
             id="key"
-            value={formData.key}
+            value={settingsData.key}
             onChange={handleChange}
           />
         </div>
