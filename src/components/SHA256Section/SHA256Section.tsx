@@ -8,9 +8,9 @@ const SHA256Section = () => {
   const initialSettings: Settings = {
     input: "",
     output: "",
-    inputEncoding: "",
-    outputEncoding: "",
-    keyEncoding: "",
+    inputEncoding: "utf8",
+    outputEncoding: "hex-lower",
+    keyEncoding: "utf8",
     key: "",
   };
 

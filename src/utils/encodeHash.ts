@@ -1,13 +1,20 @@
 export const encodeHash = (
   buffer: ArrayBuffer,
-  encoding: "utf8" | "hex" | "base64" = "utf8"
+  encoding: "utf8" | "hex-lower" | "hex-upper" | "base64" = "utf8"
 ): string => {
   const bytes = new Uint8Array(buffer);
 
-  if (encoding === "hex") {
+  if (encoding === "hex-lower") {
     return Array.from(bytes)
       .map((b) => b.toString(16).padStart(2, "0"))
       .join("");
+  }
+
+  if (encoding === "hex-upper") {
+    return Array.from(bytes)
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("")
+      .toUpperCase();
   }
 
   if (encoding === "base64") {

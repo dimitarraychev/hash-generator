@@ -33,7 +33,7 @@ export const useHash = (hashFn: HashFunction, initialSettings: Settings) => {
         );
         const encodedHash = settingsData.outputEncoding
           ? encodeHash(rawHash.slice().buffer, settingsData.outputEncoding)
-          : encodeHash(rawHash.slice().buffer, "hex");
+          : encodeHash(rawHash.slice().buffer, "hex-lower");
 
         setSettingsData((prev) => ({ ...prev, output: encodedHash }));
       } catch (err) {

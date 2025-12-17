@@ -35,7 +35,8 @@ const SettingsWrapper = ({
         value={settingsData.outputEncoding}
         onChange={handleChange}
       >
-        <option value="hex">Hex</option>
+        <option value="hex-lower">Hex (lowercase)</option>
+        <option value="hex-upper">Hex (uppercase)</option>
         <option value="base64">Base64</option>
       </select>
 
