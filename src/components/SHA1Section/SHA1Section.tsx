@@ -17,10 +17,10 @@ const SHA1Section = () => {
   const { settingsData, handleChange } = useHash(generateSHA1, initialSettings);
 
   return (
-    <section className="sha1 sha-section">
-      <h2 className="sha-header">SHA1</h2>
+    <section className="sha1 section">
+      <h2 className="section-header">SHA1</h2>
 
-      <div className="sha-columns">
+      <div className="section-columns">
         <SettingsWrapper
           settingsData={settingsData}
           handleChange={handleChange}

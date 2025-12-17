@@ -7,7 +7,6 @@ const SideMenu = () => {
 
   return (
     <ul className="side-menu">
-      {/* Hash section */}
       <li className="menu-header">Hash</li>
       <li
         className={location.pathname === "/sha1" ? "active" : ""}
@@ -22,18 +21,24 @@ const SideMenu = () => {
         SHA256
       </li>
 
-      <li className="menu-header">Base64/Hex</li>
+      <li className="menu-header">Encoding</li>
       <li
-        className={location.pathname === "/decode" ? "active" : ""}
-        onClick={() => navigate("/decode")}
+        className={location.pathname === "/hex" ? "active" : ""}
+        onClick={() => navigate("/hex")}
       >
-        Decode
+        Hex
       </li>
       <li
-        className={location.pathname === "/encode" ? "active" : ""}
-        onClick={() => navigate("/encode")}
+        className={location.pathname === "/base64" ? "active" : ""}
+        onClick={() => navigate("/base64")}
       >
-        Encode
+        Base64
+      </li>
+      <li
+        className={location.pathname === "/url" ? "active" : ""}
+        onClick={() => navigate("/url")}
+      >
+        URL
       </li>
     </ul>
   );

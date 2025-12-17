@@ -16,19 +16,19 @@
   width: 100%;
 }
 
-.sha-section {
+.section {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.sha-section .sha-header {
+.section .section-header {
   border-bottom: 1px solid var(--border);
   border-radius: 0.5rem;
   padding-bottom: 0.2rem;
 }
 
-.sha-section .sha-columns {
+.section .section-columns {
   display: flex;
   gap: 2rem;
 }
