@@ -1,27 +1,23 @@
-export const generateHmacSha256HexEncoded = async (
+export const generateSha256 = async (
   payload: string,
-  PSK: string
-) => {
+  key?: string
+): Promise<ArrayBuffer> => {
   const enc = new TextEncoder();
-  const keyData = enc.encode(PSK);
+  const data = enc.encode(payload);
 
-  const cryptoKey = await window.crypto.subtle.importKey(
-    "raw",
-    keyData,
-    { name: "HMAC", hash: { name: "SHA-256" } },
-    false,
-    ["sign"]
-  );
+  if (key) {
+    // HMAC-SHA256
+    const keyData = enc.encode(key);
+    const cryptoKey = await window.crypto.subtle.importKey(
+      "raw",
+      keyData,
+      { name: "HMAC", hash: { name: "SHA-256" } },
+      false,
+      ["sign"]
+    );
+    return await window.crypto.subtle.sign("HMAC", cryptoKey, data);
+  }
 
-  const inputData = enc.encode(payload);
-  const signature = await window.crypto.subtle.sign(
-    "HMAC",
-    cryptoKey,
-    inputData
-  );
-
-  const hashArray = Array.from(new Uint8Array(signature));
-  const hex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-
-  return hex;
+  // Plain SHA-256
+  return await window.crypto.subtle.digest("SHA-256", data);
 };

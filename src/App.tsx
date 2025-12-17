@@ -11,9 +11,9 @@ function App() {
     <div className="app">
       <Header />
 
-      <SideMenu />
-
       <div className="app-body">
+        <SideMenu />
+
         <Routes>
           <Route path="/sha1" element={<Sha1 />} />
           <Route path="/sha256" element={<Sha256 />} />

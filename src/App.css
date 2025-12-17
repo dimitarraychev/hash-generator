@@ -12,4 +12,41 @@
 .app-body {
   display: flex;
   flex: 1;
+  gap: 2rem;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  gap: 2rem;
+}
+
+label {
+  margin-left: 0.2rem;
+  font-size: 0.9rem;
+  color: var(--light-gray);
+}
+
+input,
+select {
+  margin-bottom: 0.75rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding-left: 0.3rem;
+  background-color: var(--deep-blue);
+  color: white !important;
+}
+
+textarea {
+  margin-bottom: 0.75rem;
+  height: 10rem;
+  border-radius: 0.5rem;
+  padding-left: 0.3rem;
+  margin-right: 0.5rem;
+  background-color: var(--deep-blue);
+  color: white !important;
+}
+
+.wrapper input {
+  flex: 1;
 }

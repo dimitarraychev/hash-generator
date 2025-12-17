@@ -3,8 +3,6 @@
   width: 15rem;
   border-right: 1px solid var(--border);
   border-radius: 0.3rem;
-  position: fixed;
-  left: 0;
   top: 4rem;
   display: flex;
   flex-direction: column;

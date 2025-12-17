@@ -1,0 +1,28 @@
+.settings {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+}
+
+.settings .hmac-wrapper {
+  border: 1px solid var(--separator-line);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.hmac-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings .hmac-wrapper summary {
+  margin-bottom: 0.5rem;
+  color: var(--light-gray);
+  padding-left: 0.3rem;
+}
