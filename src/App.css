@@ -1,0 +1,15 @@
+.app {
+  min-height: 100vh;
+  max-height: 100vh;
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app-body {
+  display: flex;
+  flex: 1;
+}
