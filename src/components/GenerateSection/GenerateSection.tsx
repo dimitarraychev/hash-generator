@@ -4,12 +4,12 @@ import ContentWrapper from "../ContentWrapper/ContentWrapper";
 
 const GenerateSection = () => {
   const initialSettings = {
-    count: 5,
-    length: 12,
+    count: 2,
+    length: 16,
     excludeAmbiguous: true,
   };
 
-  const { settings, handleChange, generate  } = useGenerator(initialSettings);
+  const { settings, handleChange, generate } = useGenerator(initialSettings);
 
   return (
     <section className="converter-section section">
@@ -46,7 +46,7 @@ const GenerateSection = () => {
             />
           </label>
 
-          <Button title="Generate" text="Generate" onClick={generate}/>
+          <Button title="Generate" text="Generate" onClick={generate} />
         </div>
 
         <ContentWrapper
