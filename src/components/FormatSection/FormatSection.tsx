@@ -20,7 +20,7 @@ const FormatSection = () => {
           <select name="mode" value={settings.mode} onChange={handleChange}>
             <option value="parse">Parse</option>
             <option value="stringify">Stringify</option>
-            <option value="stringify-pretty">Stringify (pretty)</option>
+            <option value="stringify-pretty">Pretty-print</option>
           </select>
         </div>
 
