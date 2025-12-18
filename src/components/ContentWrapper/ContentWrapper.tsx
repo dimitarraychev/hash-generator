@@ -46,7 +46,13 @@ const ContentWrapper = ({
           value={output}
           onChange={handleChange}
         />
-        <img src={copySvg} alt="Copy" className="copy" onClick={handleCopy} />
+        <img
+          src={copySvg}
+          alt="Copy"
+          className="copy"
+          title="Copy"
+          onClick={handleCopy}
+        />
       </div>
     </div>
   );
