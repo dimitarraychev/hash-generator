@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import logo from "../../assets/logo.svg";
+import logoSvg from "../../assets/logo.svg";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo-wrapper" onClick={() => navigate("/")}>
-        <img src={logo} alt="Logo" className="logo" />
+        <img src={logoSvg} alt="Logo" className="logo" />
         <h1 className="logo-text">Integration Utilities</h1>
       </div>
     </header>

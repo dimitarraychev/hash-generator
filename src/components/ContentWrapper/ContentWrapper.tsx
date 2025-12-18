@@ -1,5 +1,6 @@
-import "./ContentWrapper.css";
 import { toast } from "react-toastify";
+import "./ContentWrapper.css";
+import copySvg from "../../assets/copy.svg";
 
 interface ContentWrapperProps {
   hasInput?: boolean;
@@ -36,16 +37,17 @@ const ContentWrapper = ({
           />
         </>
       )}
-
-      <label htmlFor="output">Output:</label>
-      <textarea
-        readOnly
-        name="output"
-        id="output"
-        value={output}
-        onChange={handleChange}
-        onClick={handleCopy}
-      />
+      <div className="output-wrapper">
+        <label htmlFor="output">Output:</label>
+        <textarea
+          readOnly
+          name="output"
+          id="output"
+          value={output}
+          onChange={handleChange}
+        />
+        <img src={copySvg} alt="Copy" className="copy" onClick={handleCopy} />
+      </div>
     </div>
   );
 };
