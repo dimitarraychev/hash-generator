@@ -3,16 +3,9 @@ import type { HashingSettings } from "../models/Hasher";
 import { encodeHash } from "../utils/encodeHash";
 import { decodeInput } from "../utils/decodeInput";
 import { validateInput } from "../utils/validateInput";
+import { generateHash } from "../utils/generateHash";
 
-export type HashFunction = (
-  input: Uint8Array,
-  key?: Uint8Array
-) => Promise<Uint8Array>;
-
-export const useHasher = (
-  hashFn: HashFunction,
-  initialSettings: HashingSettings
-) => {
+export const useHasher = (initialSettings: HashingSettings) => {
   const [settingsData, setSettingsData] =
     useState<HashingSettings>(initialSettings);
 
@@ -52,7 +45,11 @@ export const useHasher = (
           ? decodeInput(settingsData.key, settingsData.keyEncoding)
           : undefined;
 
-        const rawHash = await hashFn(inputBytes, keyBytes);
+        const rawHash = await generateHash(
+          inputBytes,
+          settingsData.algorithm,
+          keyBytes
+        );
 
         const encodedHash = settingsData.outputEncoding
           ? encodeHash(rawHash.slice().buffer, settingsData.outputEncoding)
@@ -75,7 +72,7 @@ export const useHasher = (
     settingsData.inputEncoding,
     settingsData.keyEncoding,
     settingsData.outputEncoding,
-    hashFn,
+    settingsData.algorithm,
   ]);
 
   return { settingsData, handleChange, setSettingsData };

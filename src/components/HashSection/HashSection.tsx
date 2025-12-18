@@ -1,34 +1,35 @@
 import SettingsWrapper from "../SettingsWrapper/SettingsWrapper";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
-import { generateSHA1 } from "../../utils/generateSHA1";
 import { useHasher } from "../../hooks/useHasher";
-import type { HashingSettings } from "../../models/Hasher";
+import type { HashAlgorithm, HashingSettings } from "../../models/Hasher";
 
-const SHA1Section = () => {
+interface HashSectionProps {
+  algorithm: HashAlgorithm;
+  title?: string;
+}
+
+const HashSection = ({ algorithm, title }: HashSectionProps) => {
   const initialSettings: HashingSettings = {
     input: "",
     output: "",
     inputEncoding: "utf8",
     outputEncoding: "hex-lower",
     keyEncoding: "utf8",
+    algorithm,
     key: "",
   };
 
-  const { settingsData, handleChange } = useHasher(
-    generateSHA1,
-    initialSettings
-  );
+  const { settingsData, handleChange } = useHasher(initialSettings);
 
   return (
-    <section className="sha1 section">
-      <h2 className="section-header">Hash SHA1</h2>
+    <section className={`hash-section section ${algorithm.toLowerCase()}`}>
+      <h2 className="section-header">{title || `Hash ${algorithm}`}</h2>
 
       <div className="section-columns">
         <SettingsWrapper
           settingsData={settingsData}
           handleChange={handleChange}
         />
-
         <ContentWrapper
           input={settingsData.input}
           output={settingsData.output}
@@ -39,4 +40,4 @@ const SHA1Section = () => {
   );
 };
 
-export default SHA1Section;
+export default HashSection;

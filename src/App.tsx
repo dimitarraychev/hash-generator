@@ -4,8 +4,6 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import SideMenu from "./components/SideMenu/SideMenu";
-import SHA256Section from "./components/SHA256Section/SHA256Section";
-import SHA1Section from "./components/SHA1Section/SHA1Section";
 import ConvertSection from "./components/ConvertSection/ConvertSection";
 import {
   base64Converter,
@@ -14,6 +12,7 @@ import {
 } from "./utils/converters";
 import GenerateSection from "./components/GenerateSection/GenerateSection";
 import FormatSection from "./components/FormatSection/FormatSection";
+import HashSection from "./components/HashSection/HashSection";
 
 function App() {
   return (
@@ -32,8 +31,14 @@ function App() {
               </h2>
             }
           />
-          <Route path="/sha1" element={<SHA1Section />} />
-          <Route path="/sha256" element={<SHA256Section />} />
+          <Route
+            path="/sha1"
+            element={<HashSection key="sha1" algorithm="SHA-1" />}
+          />
+          <Route
+            path="/sha256"
+            element={<HashSection key="sha256" algorithm="SHA-256" />}
+          />
           <Route path="/key" element={<GenerateSection />} />
           <Route path="/json" element={<FormatSection />} />
 

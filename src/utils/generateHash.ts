@@ -1,12 +1,15 @@
-export const generateSHA256 = async (
+import type { HashAlgorithm } from "../models/Hasher";
+
+export const generateHash = async (
   payload: Uint8Array,
+  algorithm: HashAlgorithm,
   key?: Uint8Array
 ): Promise<Uint8Array> => {
   if (key) {
     const cryptoKey = await crypto.subtle.importKey(
       "raw",
       new Uint8Array(key).buffer,
-      { name: "HMAC", hash: "SHA-256" },
+      { name: "HMAC", hash: algorithm },
       false,
       ["sign"]
     );
@@ -20,7 +23,7 @@ export const generateSHA256 = async (
   }
 
   const digest = await crypto.subtle.digest(
-    "SHA-256",
+    algorithm,
     new Uint8Array(payload).buffer
   );
   return new Uint8Array(digest);
