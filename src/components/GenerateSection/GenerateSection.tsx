@@ -46,7 +46,7 @@ const GenerateSection = () => {
             />
           </label>
 
-          <Button title="Generate" text="Generate" onClick={generate} />
+          <Button title="Re-Generate" text="Re-Generate" onClick={generate} />
         </div>
 
         <ContentWrapper
