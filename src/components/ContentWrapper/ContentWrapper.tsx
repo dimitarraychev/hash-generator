@@ -19,15 +19,15 @@ const ContentWrapper = ({
   output,
   handleChange,
 }: ContentWrapperProps) => {
-  const handleCopy = () => {
-    navigator.clipboard.writeText(output);
-    toast.success("Output copied to clipboard ✅");
+  const handleCopy = (content: string) => {
+    navigator.clipboard.writeText(content);
+    toast.success("Content copied to clipboard ✅");
   };
 
   return (
     <div className="content">
       {hasInput && (
-        <>
+        <div className="content-wrapper">
           <label htmlFor="input">Input:</label>
           <textarea
             name="input"
@@ -35,9 +35,16 @@ const ContentWrapper = ({
             value={input}
             onChange={handleChange}
           />
-        </>
+          <img
+            src={copySvg}
+            alt="Copy"
+            className="copy"
+            title="Copy Input"
+            onClick={() => handleCopy(input)}
+          />
+        </div>
       )}
-      <div className="output-wrapper">
+      <div className="content-wrapper">
         <label htmlFor="output">Output:</label>
         <textarea
           readOnly
@@ -50,8 +57,8 @@ const ContentWrapper = ({
           src={copySvg}
           alt="Copy"
           className="copy"
-          title="Copy"
-          onClick={handleCopy}
+          title="Copy Output"
+          onClick={() => handleCopy(output)}
         />
       </div>
     </div>

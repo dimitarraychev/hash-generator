@@ -4,15 +4,16 @@
   width: 40rem;
 }
 
-.content #output {
+.content #output,
+#input {
   width: 100%;
 }
 
-.content .output-wrapper {
+.content .content-wrapper {
   position: relative;
 }
 
-.output-wrapper .copy {
+.content-wrapper .copy {
   position: absolute;
   top: 1.6rem;
   right: 0.3rem;
