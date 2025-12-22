@@ -13,6 +13,7 @@
   font-family: inherit;
   font-size: 1rem;
   padding-right: 1.8rem;
+  resize: none;
 }
 
 .auto-textarea:focus {

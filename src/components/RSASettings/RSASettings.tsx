@@ -68,7 +68,7 @@ const RSASettings = ({
         value={settings.publicKey}
         onChange={handleChange}
         minHeight={144}
-        maxHeight={240}
+        maxHeight={144}
         placeholder="Enter your public key here.."
       />
 
@@ -80,7 +80,7 @@ const RSASettings = ({
         value={settings.privateKey}
         onChange={handleChange}
         minHeight={144}
-        maxHeight={240}
+        maxHeight={144}
         placeholder="Enter your private key here..."
       />
 

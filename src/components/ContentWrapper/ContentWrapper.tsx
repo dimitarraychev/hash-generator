@@ -29,7 +29,7 @@ const ContentWrapper = ({
           onChange={handleChange}
           placeholder="Enter your input here..."
           minHeight={256}
-          maxHeight={480}
+          maxHeight={256}
         />
       )}
 
@@ -42,7 +42,7 @@ const ContentWrapper = ({
         onChange={handleChange}
         placeholder="Output will appear here..."
         minHeight={256}
-        maxHeight={480}
+        maxHeight={256}
       />
     </div>
   );
