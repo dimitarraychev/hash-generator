@@ -1,4 +1,5 @@
 import type { RSASettingsModel } from "../../models/RSA";
+import { RSA_ALGORITHM_LABELS } from "../../models/RSA";
 import AutoExpandingTextarea from "../AutoExpandingTextarea/AutoExpandingTextarea";
 import Button from "../Button/Button";
 
@@ -47,17 +48,18 @@ const RSASettings = ({
         <option value="hex-upper">Hex (uppercase)</option>
       </select>
 
-      <label htmlFor="hash">Hash:</label>
+      <label htmlFor="algorithm">Algorithm:</label>
       <select
-        name="hash"
-        id="hash"
-        value={settings.hash}
+        name="algorithm"
+        id="algorithm"
+        value={settings.algorithm}
         onChange={handleChange}
       >
-        <option value="SHA-1">SHA-1</option>
-        <option value="SHA-256">SHA-256</option>
-        <option value="SHA-384">SHA-384</option>
-        <option value="SHA-512">SHA-512</option>
+        {Object.entries(RSA_ALGORITHM_LABELS).map(([value, label]) => (
+          <option key={value} value={value}>
+            {label}
+          </option>
+        ))}
       </select>
 
       <AutoExpandingTextarea

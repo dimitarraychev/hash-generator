@@ -21,7 +21,7 @@ export const useRSA = (initialSettings: RSASettingsModel) => {
   const handleGenerate = async () => {
     try {
       const { publicKeyPem, privateKeyPem } = await generateKeyPair(
-        settings.hash
+        settings.algorithm
       );
       setSettings((prev) => ({
         ...prev,
@@ -40,7 +40,8 @@ export const useRSA = (initialSettings: RSASettingsModel) => {
         settings.publicKey,
         settings.input,
         settings.inputEncoding || "utf8",
-        settings.hash
+        settings.outputEncoding || "base64",
+        settings.algorithm
       );
       setSettings((prev) => ({ ...prev, output: cipher }));
     } catch (err) {
@@ -55,8 +56,9 @@ export const useRSA = (initialSettings: RSASettingsModel) => {
       const plain = await decryptWithPrivateKey(
         settings.privateKey,
         settings.input,
-        "utf8",
-        settings.hash
+        settings.inputEncoding || "base64",
+        settings.outputEncoding || "utf8",
+        settings.algorithm
       );
       setSettings((prev) => ({ ...prev, output: plain }));
     } catch (err) {

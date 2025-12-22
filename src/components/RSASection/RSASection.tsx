@@ -11,8 +11,7 @@ const RSASection = () => {
     outputEncoding: "base64",
     publicKey: "",
     privateKey: "",
-    algorithm: "RSA-OAEP",
-    hash: "SHA-256",
+    algorithm: "SHA-256",
   };
 
   const {
