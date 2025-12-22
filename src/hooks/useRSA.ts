@@ -55,7 +55,7 @@ export const useRSA = (initialSettings: RSASettingsModel) => {
       const plain = await decryptWithPrivateKey(
         settings.privateKey,
         settings.input,
-        settings.outputEncoding || "base64",
+        "utf8",
         settings.hash
       );
       setSettings((prev) => ({ ...prev, output: plain }));

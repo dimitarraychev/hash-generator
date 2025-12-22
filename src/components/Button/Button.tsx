@@ -8,7 +8,7 @@ interface ButtonProps {
   icon?: string;
   classNameProp?: string;
   title: string;
-  onClick?: () => void;
+  onClick?: () => void | Promise<void>;
 }
 
 const Button = ({

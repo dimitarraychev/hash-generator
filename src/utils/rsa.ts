@@ -1,5 +1,3 @@
-/* Browser WebCrypto helpers for RSA-OAEP key generation, import/export, encrypt/decrypt */
-
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 
