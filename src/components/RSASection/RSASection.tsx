@@ -11,7 +11,7 @@ const RSASection = () => {
     outputEncoding: "hex-lower",
     publicKey: "",
     privateKey: "",
-    algorithm: "SHA-256",
+    algorithm: "PCKS#1",
   };
 
   const {

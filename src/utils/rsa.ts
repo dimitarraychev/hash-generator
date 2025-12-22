@@ -23,7 +23,7 @@ export const generateKeyPair = async (
   algorithm: RSAAlgorithm = "SHA-256",
   modulusLength: number = 2048
 ) => {
-  if (algorithm === "pcks1") {
+  if (algorithm === "PCKS#1") {
     const keypair = (forge as any).pki.rsa.generateKeyPair({
       bits: modulusLength,
       e: 0x10001,
@@ -58,7 +58,7 @@ export const importPublicKey = async (
   algorithm: RSAAlgorithm = "SHA-256"
 ) => {
   const der = base64ToBytes(unwrapPem(pem));
-  if (algorithm === "pcks1") {
+  if (algorithm === "PCKS#1") {
     return new Uint8Array(der);
   }
 
@@ -76,7 +76,7 @@ export const importPrivateKey = async (
   algorithm: RSAAlgorithm = "SHA-256"
 ) => {
   const der = base64ToBytes(unwrapPem(pem));
-  if (algorithm === "pcks1") {
+  if (algorithm === "PCKS#1") {
     return new Uint8Array(der);
   }
 
@@ -96,7 +96,7 @@ export const encryptWithPublicKey = async (
   outputEncoding: Encoding = "base64",
   algorithm: RSAAlgorithm = "SHA-256"
 ): Promise<string> => {
-  if (algorithm === "pcks1") {
+  if (algorithm === "PCKS#1") {
     const pub = (forge as any).pki.publicKeyFromPem(publicKeyPem);
     const dataBytes = decodeInput(data, inputEncoding);
     const binary = String.fromCharCode(...new Uint8Array(dataBytes));
@@ -126,7 +126,7 @@ export const decryptWithPrivateKey = async (
   outputEncoding: Encoding = "utf8",
   algorithm: RSAAlgorithm = "SHA-256"
 ): Promise<string> => {
-  if (algorithm === "pcks1") {
+  if (algorithm === "PCKS#1") {
     const priv = (forge as any).pki.privateKeyFromPem(privateKeyPem);
     const cipherBytes = decodeInput(cipherInput, inputEncoding);
     const binary = String.fromCharCode(...new Uint8Array(cipherBytes));
