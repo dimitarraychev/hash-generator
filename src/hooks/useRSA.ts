@@ -23,7 +23,11 @@ export const useRSA = (initialSettings: RSASettingsModel) => {
       const { publicKeyPem, privateKeyPem } = await generateKeyPair(
         settings.hash
       );
-      setSettings((prev) => ({ ...prev, publicKey: publicKeyPem, privateKey: privateKeyPem }));
+      setSettings((prev) => ({
+        ...prev,
+        publicKey: publicKeyPem,
+        privateKey: privateKeyPem,
+      }));
     } catch (err) {
       console.error(err);
     }

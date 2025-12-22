@@ -1,6 +1,6 @@
-import type { GeneratorFn } from "../models/Generate";
+import type { GenerateFn } from "../models/Generate";
 
-export const generateKeys: GeneratorFn = ({
+export const generateKeys: GenerateFn = ({
   count,
   length,
   excludeAmbiguous,
