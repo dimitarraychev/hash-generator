@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./SideMenu.css";
+import logoSvg from "../../assets/logo.svg";
 
 const SideMenu = () => {
   const navigate = useNavigate();
@@ -7,6 +8,11 @@ const SideMenu = () => {
 
   return (
     <ul className="side-menu">
+      <div className="logo-wrapper" onClick={() => navigate("/")}>
+        <img src={logoSvg} alt="Logo" className="logo" />
+        <h1 className="logo-text">Integration Utilities</h1>
+      </div>
+
       <li className="menu-header">Hash</li>
       <li
         className={location.pathname === "/sha1" ? "active" : ""}

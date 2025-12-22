@@ -1,8 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Bounce, ToastContainer } from "react-toastify";
 import "./App.css";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 import SideMenu from "./components/SideMenu/SideMenu";
 import ConvertSection from "./components/ConvertSection/ConvertSection";
 import {
@@ -17,8 +15,6 @@ import HashSection from "./components/HashSection/HashSection";
 function App() {
   return (
     <div className="app">
-      <Header />
-
       <div className="app-body">
         <SideMenu />
 
@@ -80,8 +76,6 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
-
-      <Footer />
 
       <ToastContainer
         position="top-right"

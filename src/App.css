@@ -12,25 +12,25 @@
 .app-body {
   display: flex;
   flex: 1;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
 }
 
 .section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .section .section-header {
   border-bottom: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding-bottom: 0.2rem;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0;
 }
 
 .section .section-columns {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 label {
@@ -73,7 +73,6 @@ input[type="checkbox"] {
 }
 
 .settings .hmac-wrapper summary {
-  margin-bottom: 0.5rem;
   color: var(--light-gray);
   padding-left: 0.3rem;
 }
