@@ -109,7 +109,11 @@ export const encryptWithPublicKey = async (
     dataBytes = encoder.encode(data);
   } else if (encoding === "base64") {
     dataBytes = new Uint8Array(base64ToArrayBuffer(data));
-  } else if (encoding === "hex" || encoding === "hex-lower" || encoding === "hex-upper") {
+  } else if (
+    encoding === "hex" ||
+    encoding === "hex-lower" ||
+    encoding === "hex-upper"
+  ) {
     dataBytes = new Uint8Array(hexToArrayBuffer(data));
   } else {
     // default to utf8
@@ -144,7 +148,11 @@ export const decryptWithPrivateKey = async (
     return arrayBufferToBase64(plain);
   }
 
-  if (encoding === "hex-lower" || encoding === "hex-upper" || encoding === "hex") {
+  if (
+    encoding === "hex-lower" ||
+    encoding === "hex-upper" ||
+    encoding === "hex"
+  ) {
     const upper = encoding === "hex-upper";
     return arrayBufferToHex(plain, upper);
   }
