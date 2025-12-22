@@ -25,7 +25,7 @@ const RSASection = () => {
 
   return (
     <section className={`rsa-section section`}>
-      <h3 className="section-header">Crypto RSA</h3>
+      <h2 className="section-header">Crypto RSA</h2>
 
       <div className="section-columns">
         <RSASettings

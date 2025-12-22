@@ -23,9 +23,9 @@ function App() {
           <Route
             path="/"
             element={
-              <h3 className="section-header welcome-msg">
+              <h2 className="section-header welcome-msg">
                 Choose a Tool to Get Started...
-              </h3>
+              </h2>
             }
           />
           <Route

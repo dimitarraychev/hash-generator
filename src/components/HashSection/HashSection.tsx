@@ -23,7 +23,7 @@ const HashSection = ({ algorithm, title }: HashSectionProps) => {
 
   return (
     <section className={`hash-section section ${algorithm.toLowerCase()}`}>
-      <h3 className="section-header">{title || `Hash ${algorithm}`}</h3>
+      <h2 className="section-header">{title || `Hash ${algorithm}`}</h2>
 
       <div className="section-columns">
         <HashSettings settings={settings} handleChange={handleChange} />

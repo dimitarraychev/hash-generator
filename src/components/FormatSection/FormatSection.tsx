@@ -13,7 +13,7 @@ const FormatSection = () => {
 
   return (
     <section className="converter-section section">
-      <h3 className="section-header">Format JSON</h3>
+      <h2 className="section-header">Format JSON</h2>
       <div className="section-columns">
         <div className="settings">
           <label htmlFor="mode">Mode:</label>

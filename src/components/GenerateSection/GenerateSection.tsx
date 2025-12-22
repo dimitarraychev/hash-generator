@@ -13,7 +13,7 @@ const GenerateSection = () => {
 
   return (
     <section className="converter-section section">
-      <h3 className="section-header">Generate Key</h3>
+      <h2 className="section-header">Generate Key</h2>
       <div className="section-columns">
         <div className="settings">
           <label>Number of Keys:</label>
