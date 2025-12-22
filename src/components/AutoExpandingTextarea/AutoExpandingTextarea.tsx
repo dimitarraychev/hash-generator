@@ -9,6 +9,7 @@ interface AutoExpandingTextareaProps
   title: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   maxHeight?: number;
+  minHeight?: number;
   showCopy?: boolean;
 }
 
@@ -17,6 +18,7 @@ const AutoExpandingTextarea = ({
   title,
   onChange,
   maxHeight = 512,
+  minHeight = 48,
   showCopy = false,
   readOnly = false,
   ...props
@@ -26,7 +28,10 @@ const AutoExpandingTextarea = ({
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const ta = e.target;
     ta.style.height = "auto";
-    ta.style.height = Math.min(ta.scrollHeight, maxHeight) + "px";
+    ta.style.minHeight = minHeight + "px";
+    ta.style.maxHeight = maxHeight + "px";
+    ta.style.height =
+      Math.min(Math.max(ta.scrollHeight, minHeight), maxHeight) + "px";
     onChange(e);
   };
 
@@ -39,9 +44,12 @@ const AutoExpandingTextarea = ({
     const ta = textareaRef.current;
     if (ta) {
       ta.style.height = "auto";
-      ta.style.height = Math.min(ta.scrollHeight, maxHeight) + "px";
+      ta.style.minHeight = minHeight + "px";
+      ta.style.maxHeight = maxHeight + "px";
+      ta.style.height =
+        Math.min(Math.max(ta.scrollHeight, minHeight), maxHeight) + "px";
     }
-  }, [value, maxHeight]);
+  }, [value, maxHeight, minHeight]);
 
   return (
     <div className="auto-textarea-wrapper">

@@ -8,12 +8,11 @@
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  min-height: 16rem;
-  max-height: 32rem;
   overflow-y: auto;
   color: white;
   font-family: inherit;
   font-size: 1rem;
+  padding-right: 1.8rem;
 }
 
 .auto-textarea:focus {

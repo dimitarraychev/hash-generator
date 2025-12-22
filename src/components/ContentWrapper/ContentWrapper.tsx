@@ -28,6 +28,8 @@ const ContentWrapper = ({
           showCopy
           onChange={handleChange}
           placeholder="Enter your input here..."
+          minHeight={256}
+          maxHeight={480}
         />
       )}
 
@@ -39,6 +41,8 @@ const ContentWrapper = ({
         showCopy
         onChange={handleChange}
         placeholder="Output will appear here..."
+        minHeight={256}
+        maxHeight={480}
       />
     </div>
   );

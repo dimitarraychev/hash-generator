@@ -1,4 +1,5 @@
 import type { RSASettingsModel } from "../../models/RSA";
+import AutoExpandingTextarea from "../AutoExpandingTextarea/AutoExpandingTextarea";
 import Button from "../Button/Button";
 
 interface RSASettingsProps {
@@ -59,20 +60,28 @@ const RSASettings = ({
         <option value="SHA-512">SHA-512</option>
       </select>
 
-      <label htmlFor="publicKey">Public Key:</label>
-      <textarea
+      <AutoExpandingTextarea
+        title="Public Key"
         name="publicKey"
         id="publicKey"
+        showCopy
         value={settings.publicKey}
         onChange={handleChange}
+        minHeight={144}
+        maxHeight={240}
+        placeholder="Enter your public key here.."
       />
 
-      <label htmlFor="privateKey">Private Key:</label>
-      <textarea
+      <AutoExpandingTextarea
+        title="Private Key"
         name="privateKey"
         id="privateKey"
+        showCopy
         value={settings.privateKey}
         onChange={handleChange}
+        minHeight={144}
+        maxHeight={240}
+        placeholder="Enter your private key here..."
       />
 
       <div className="rsa-actions">
