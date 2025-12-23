@@ -7,17 +7,27 @@
 }
 
 .side-menu li {
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 1rem;
   cursor: pointer;
+  font-weight: 600;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: transform, filter;
 }
 
 .side-menu li.active {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-left: 4px solid var(--selected);
+  background-color: var(--light);
+  border-left: 0.4rem solid var(--border);
+  transform: scale(1);
+}
+
+.side-menu li:not(.active):not(.menu-header):hover {
+  filter: brightness(1.2);
+  transform: scale(1.02);
 }
 
 .side-menu li.menu-header {
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
   cursor: default;
   margin-top: 0.5rem;
@@ -36,7 +46,10 @@
 .side-menu .logo-text {
   color: var(--dark-gray);
   font-size: 1.2rem;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
+  font-weight: 700;
+  margin-left: -0.2rem;
+  padding-right: 0.5rem;
 }
 
 .side-menu .logo {

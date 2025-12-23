@@ -73,18 +73,7 @@ textarea {
 }
 
 .settings {
-  width: 20rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
-}
-
-.welcome-msg {
-  color: var(--light-gray);
-}
-
-.rsa-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
 }

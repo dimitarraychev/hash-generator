@@ -20,14 +20,7 @@ function App() {
         <SideMenu />
 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <h2 className="section-header welcome-msg">
-                Choose a Tool to Get Started...
-              </h2>
-            }
-          />
+          <Route path="/" element={<Navigate to="/sha1" />} />
           <Route
             path="/sha1"
             element={<HashSection key="sha1" algorithm="SHA-1" />}

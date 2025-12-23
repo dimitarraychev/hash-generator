@@ -14,9 +14,9 @@
   padding: 2px 8px;
   background-color: rgba(0, 0, 0, 0.16);
   border-radius: 0px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--dark-gray);
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   transition-property: color, background-color, box-shadow;
   display: flex;
   height: 32px;
@@ -37,11 +37,11 @@
 }
 
 .customCheckBox .inner {
-  font-size: 18px;
+  font-size: 1rem;
   font-weight: 600;
   pointer-events: none;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 300ms;
+  transition-duration: 200ms;
   transition-property: transform;
   transform: translateY(0px);
 }

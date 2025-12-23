@@ -28,6 +28,9 @@
   height: 1.8rem;
   cursor: pointer;
   z-index: 2;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: transform, filter;
 }
 
 .copy-btn:hover {
