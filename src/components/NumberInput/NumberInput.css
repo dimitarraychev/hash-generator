@@ -1,0 +1,48 @@
+.number-input-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.number-input-wrapper input {
+  width: 100%;
+  padding-right: 24px; /* space for arrows */
+  box-sizing: border-box;
+}
+
+.number-input-wrapper .arrows {
+  position: absolute;
+  right: 7px;
+  top: 6px;
+  bottom: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+}
+
+.number-input-wrapper .arrows .up,
+.number-input-wrapper .arrows .down {
+  font-size: 10px;
+  text-align: center;
+  padding: 0 2px;
+  color: var(--light-gray);
+}
+
+.number-input-wrapper .arrows .up:hover,
+.number-input-wrapper .arrows .down:hover {
+  filter: brightness(1.2);
+  transform: scale(1.02);
+}
+
+.number-input-wrapper .arrows .up:active,
+.number-input-wrapper .arrows .down:active {
+  transform: scale(1);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

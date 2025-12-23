@@ -1,6 +1,7 @@
 import { useGenerate } from "../../hooks/useGenerate";
 import Button from "../Button/Button";
 import ContentWrapper from "../ContentWrapper/ContentWrapper";
+import NumberInput from "../NumberInput/NumberInput";
 
 const GenerateSection = () => {
   const initialSettings = {
@@ -16,20 +17,18 @@ const GenerateSection = () => {
       <h2 className="section-header">Generate Key</h2>
       <div className="section-columns">
         <div className="settings">
-          <label>Number of Keys:</label>
-          <input
-            type="number"
+          <NumberInput
             name="count"
+            label="Number of Keys:"
             value={settings.count}
             min={1}
             max={100}
             onChange={handleChange}
           />
 
-          <label>Key Length:</label>
-          <input
-            type="number"
+          <NumberInput
             name="length"
+            label="Key Length:"
             value={settings.length}
             min={6}
             max={32}
