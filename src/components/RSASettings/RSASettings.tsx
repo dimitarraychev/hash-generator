@@ -1,5 +1,5 @@
 import type { RSASettingsModel } from "../../models/RSA";
-import AutoExpandingTextarea from "../AutoExpandingTextarea/AutoExpandingTextarea";
+import CustomTextarea from "../CustomTextarea/CustomTextarea";
 import Button from "../Button/Button";
 import CustomRadio from "../CustomRadio/CustomRadio";
 
@@ -89,7 +89,7 @@ const RSASettings = ({
         }
       />
 
-      <AutoExpandingTextarea
+      <CustomTextarea
         title="Public Key"
         name="publicKey"
         id="publicKey"
@@ -97,11 +97,10 @@ const RSASettings = ({
         value={settings.publicKey}
         onChange={handleChange}
         minHeight={128}
-        maxHeight={128}
         placeholder="Enter your public key here.."
       />
 
-      <AutoExpandingTextarea
+      <CustomTextarea
         title="Private Key"
         name="privateKey"
         id="privateKey"
@@ -109,7 +108,6 @@ const RSASettings = ({
         value={settings.privateKey}
         onChange={handleChange}
         minHeight={128}
-        maxHeight={128}
         placeholder="Enter your private key here..."
       />
 

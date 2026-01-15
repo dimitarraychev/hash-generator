@@ -1,5 +1,5 @@
 import type { HashSettingsModel } from "../../models/Hash";
-import AutoExpandingTextarea from "../AutoExpandingTextarea/AutoExpandingTextarea";
+import CustomTextarea from "../CustomTextarea/CustomTextarea";
 import CustomRadio from "../CustomRadio/CustomRadio";
 
 interface HashSettingsProps {
@@ -62,7 +62,7 @@ const HashSettings = ({ settings, handleChange }: HashSettingsProps) => {
         }
       />
 
-      <AutoExpandingTextarea
+      <CustomTextarea
         title="Key"
         name="key"
         id="key"
@@ -70,7 +70,6 @@ const HashSettings = ({ settings, handleChange }: HashSettingsProps) => {
         value={settings.key}
         onChange={handleChange}
         minHeight={128}
-        maxHeight={128}
         placeholder="Enter your key here.."
       />
     </div>

@@ -22,10 +22,10 @@
 
 .copy-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.3rem;
-  width: 1.8rem;
+  top: 2.4rem;
+  right: 0.6rem;
   height: 1.8rem;
+  aspect-ratio: 1/1;
   cursor: pointer;
   z-index: 2;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -33,11 +33,25 @@
   transition-property: transform, filter;
 }
 
-.copy-btn:hover {
+.expand-btn {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  height: 1.4rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  z-index: 2;
+  transition: transform 200ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    filter 200ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.copy-btn:hover,
+.expand-btn:hover {
   filter: brightness(1.2);
   transform: scale(1.02);
 }
 
-.copy-btn:active {
+.copy-btn:active,
+.expand-btn:active {
   transform: scale(1);
 }

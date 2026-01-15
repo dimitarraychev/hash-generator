@@ -1,5 +1,5 @@
 import "./ContentWrapper.css";
-import AutoExpandingTextarea from "../AutoExpandingTextarea/AutoExpandingTextarea";
+import CustomTextarea from "../CustomTextarea/CustomTextarea";
 
 interface ContentWrapperProps {
   hasInput?: boolean;
@@ -24,7 +24,7 @@ const ContentWrapper = ({
   return (
     <div className="content">
       {hasInput && (
-        <AutoExpandingTextarea
+        <CustomTextarea
           name="input"
           title="Input"
           value={input}
@@ -32,12 +32,11 @@ const ContentWrapper = ({
           onChange={handleChange}
           placeholder="Enter your input here..."
           minHeight={272}
-          maxHeight={272}
         />
       )}
 
       {outputs.map((item, idx) => (
-        <AutoExpandingTextarea
+        <CustomTextarea
           key={idx}
           name={`output-${idx}`}
           title={idx === 0 ? "Output" : ""}
@@ -47,7 +46,6 @@ const ContentWrapper = ({
           onChange={handleChange}
           placeholder="Output will appear here..."
           minHeight={isArray ? 48 : 272}
-          maxHeight={isArray ? 48 : 272}
         />
       ))}
     </div>
