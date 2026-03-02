@@ -10,7 +10,7 @@ interface ContentWrapperProps {
   handleChange: (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-    >
+    >,
   ) => void;
 }
 
@@ -48,7 +48,7 @@ const ContentWrapper = ({
             showExpand={hasInput}
             onChange={handleChange}
             placeholder="Output will appear here..."
-            minHeight={isArray ? 48 : 272}
+            minHeight={isArray ? 53 : 272}
           />
         ))}
 

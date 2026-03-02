@@ -5,8 +5,7 @@ import collapseSvg from "../../assets/collapse.svg";
 import { toast } from "react-toastify";
 import "./CustomTextarea.css";
 
-interface CustomTextareaProps
-  extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface CustomTextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   value: string;
   title?: string;
   onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -56,7 +55,7 @@ const CustomTextarea = ({
   }, [value, isExpanded, minHeight]);
 
   return (
-    <>
+    <div className="custom-text-area">
       {title && <label htmlFor={props.name}>{title}:</label>}
 
       <div className="custom-textarea-wrapper">
@@ -92,7 +91,7 @@ const CustomTextarea = ({
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

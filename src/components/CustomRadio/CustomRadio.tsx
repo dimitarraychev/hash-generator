@@ -21,7 +21,7 @@ const CustomRadio = ({
   onChange,
 }: CustomRadioProps) => {
   return (
-    <>
+    <div className="custom-radio">
       {label != "" && <label htmlFor={name}>{label}</label>}
       <div className="customCheckBoxHolder">
         {options.map((option) => {
@@ -48,7 +48,7 @@ const CustomRadio = ({
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -9,15 +9,19 @@
   min-width: 100%;
   max-width: 100%;
   overflow-y: auto;
-  color: white;
+  color: var(--primary-color);
   font-family: inherit;
   font-size: 1rem;
-  padding-right: 2.5rem;
   resize: none;
-}
-
-.custom-textarea:focus {
-  outline: 2px solid var(--border);
+  background: var(--card-bg);
+  backdrop-filter: var(--backdrop-filter);
+  -webkit-backdrop-filter: var(--backdrop-filter);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  padding-right: 2.5rem;
+  border: var(--card-border);
+  overflow-y: auto;
 }
 
 .textarea-buttons-wrapper {
@@ -26,7 +30,7 @@
   right: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: var(--gap);
 }
 
 .copy-btn,
@@ -47,7 +51,8 @@
 .copy-btn:hover,
 .expand-btn:hover {
   filter: brightness(1.2);
-  transform: scale(1.02);
+  transform: var(--transform);
+  transition: var(--transition);
 }
 
 .copy-btn:active,

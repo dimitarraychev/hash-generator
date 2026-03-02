@@ -13,7 +13,7 @@ const JsonViewer = ({ jsonData, title }: JsonViewerProps) => {
       <ReactJson
         src={jsonData}
         theme="summerfruit"
-        style={{ backgroundColor: "#00010f", fontSize: "16px" }}
+        style={{ backgroundColor: "var(--sidebar-bg)", fontSize: "16px" }}
         enableClipboard={true}
         displayDataTypes={false}
         displayObjectSize={false}

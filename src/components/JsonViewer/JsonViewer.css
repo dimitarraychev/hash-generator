@@ -1,6 +1,5 @@
 .react-json-view {
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  outline: 2px solid var(--border);
-
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  border: 1px solid var(--card-border);
 }
