@@ -52,7 +52,7 @@ label:has(input[type="checkbox"]) {
 input:not([type="checkbox"]),
 select {
   border-radius: var(--border-radius);
-  padding: var(--padding);
+  padding: var(--element-padding);
   background-color: var(--card-bg);
   color: var(--text-primary) !important;
   box-shadow: var(--box-shadow);
