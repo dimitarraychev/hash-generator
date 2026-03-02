@@ -32,7 +32,7 @@ const NumberInput = ({
   };
 
   return (
-    <>
+    <div className="custom-number-input">
       {label != "" && <label htmlFor={name}>{label}</label>}
 
       <div className="number-input-wrapper">
@@ -46,7 +46,7 @@ const NumberInput = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
