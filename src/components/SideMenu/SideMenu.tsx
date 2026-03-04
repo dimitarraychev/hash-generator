@@ -36,7 +36,7 @@ const SideMenu = () => {
     <div className={`side-menu ${isCollapsed ? "collapsed" : ""}`}>
       <div className="logo-wrapper">
         <img src={logo} alt="Logo" className="logo" />
-        {!isCollapsed && <h1 className="logo-text">Secure Data Tools</h1>}
+        <h1 className="logo-text">Secure Data Tools</h1>
         <img
           src={menuLogo}
           alt="Menu"

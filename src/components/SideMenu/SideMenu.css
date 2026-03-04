@@ -22,6 +22,29 @@
   overflow: hidden;
 }
 
+.side-menu .logo-text,
+.side-menu ul {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.side-menu.collapsed .logo-text,
+.side-menu.collapsed ul {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+  transition-delay: 0s;
+}
+
+.side-menu:not(.collapsed) .logo-text,
+.side-menu:not(.collapsed) ul {
+  transition-delay: 0.1s;
+}
+
 .collapse-toggle {
   background: transparent;
   border: none;
@@ -99,13 +122,22 @@ img#logo.selector-logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
 }
 
 .side-menu .logo-text {
+  position: absolute;
+  left: 3rem;
   color: var(--text-primary);
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: -0.3px;
+  transition:
+    opacity 0.1s ease,
+    transform 0.1s ease;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
 .side-menu .logo {
