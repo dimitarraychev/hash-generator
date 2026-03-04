@@ -13,6 +13,23 @@
   overflow-y: auto;
   border-radius: var(--border-radius);
   border: var(--sidebar-border);
+  transition: width 0.3s ease;
+}
+
+.side-menu.collapsed {
+  width: 6rem;
+  height: 4rem;
+  overflow: hidden;
+}
+
+.collapse-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-left: auto;
+  height: 1.6rem;
+  aspect-ratio: 1/1;
 }
 
 img#logo.selector-logo {
