@@ -1,5 +1,38 @@
 .react-json-view {
   border-radius: var(--border-radius);
   padding: var(--padding);
-  border: 1px solid var(--card-border);
+  border: var(--card-border);
+}
+
+.json-view-wrapper {
+  position: relative;
+}
+
+.json-buttons-wrapper {
+  position: absolute;
+  top: 1.5rem;
+  right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.json-buttons-wrapper .expand-btn {
+  height: 1.4rem;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  z-index: 2;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: transform, filter;
+}
+
+.json-buttons-wrapper .expand-btn:hover {
+  filter: brightness(1.2);
+  transform: var(--transform);
+  transition: var(--transition);
+}
+
+.json-buttons-wrapper .expand-btn:active {
+  transform: scale(1);
 }
